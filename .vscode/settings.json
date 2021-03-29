@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "sstream": "cpp",
+        "regex": "cpp",
+        "scoped_allocator": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "BLANK1.C": "cpp",
+        "BLANK1 - 副本.C": "cpp"
+    }
+}
