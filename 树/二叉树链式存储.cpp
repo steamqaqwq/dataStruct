@@ -141,6 +141,9 @@ void level(BiTree T)
         }
     }
 }
+
+
+
 // 定义空树
 int main()
 {
