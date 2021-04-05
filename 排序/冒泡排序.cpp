@@ -27,17 +27,18 @@ void BubbleSort(int a[], int n)
 }
 
 /////////////////////////////////////////////////////////
-void BubbleSortTest(int a[], int n)
+void BubbleSort(int a[], int n)
 {
-    int j, k;
-    for (j = 0; j < n - 1; j++)
+    for (int i = 0; i < n - 1; i++)
     {
         bool flag = false;
-        for (k = n - 1; k > j; k--)
+        // 从后往前 冒泡 小的在前
+        for (int j = n - 1; j > i; j--)
         {
-            if (a[k - 1] > a[k])
+            if (a[j - 1] > a[j])
             {
-                swap(a[k - 1], a[k]);
+                // 前项>后项 则前后交换
+                swap(a[j - 1], a[j]);
                 flag = true;
             }
         }
@@ -46,24 +47,20 @@ void BubbleSortTest(int a[], int n)
     }
 }
 
-void BubbleSortTest2(int a[], int n)
-{
-    int j, k;
-    for (j = 0; j < n - 1; j++)
-    {
+void BubbleSort(int a[],int n){
+    for(int i=0;i<n-1;i++){
         bool flag = false;
-
-        for (k = n - 1; k > j; k--)
-        {
-            if (a[k] < a[k - 1])
-            {
-                swap(a[k], a[k - 1]);
+        for(int j=n-1;j>i;j--){
+            if(a[j-1]<a[j]){
                 flag = true;
+                swap(a[j-1],a[j]);
             }
+        }
+        if(flag == false){
+            return;
         }
     }
 }
-
 /////////////////////////////////////////////////////////
 
 int main()

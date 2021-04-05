@@ -1,4 +1,6 @@
 #include <stdio.h>
+// 简单选择排序 遍历整个数组找出最小(min)的放到第一位 依次
+
 void swap(int &a, int &b)
 {
     int temp = a;
@@ -19,10 +21,57 @@ void simpleSort(int a[], int n)
             swap(a[i], a[min]);
     }
 }
-void spSort(int a[], int n)
+/////////////////////////////////////////////////////////
+void simpleSort(int a[], int n)
 {
     for (int i = 0; i < n - 1; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (a[j] < a[min])
+                swap(a[i], a[min]);
+        }
+    }
 }
+void simpleSort(int a[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int min = i; //min 指针
+        for (int j = i + 1; j < n; j++)
+        {
+            if (a[j] < a[min])
+                swap(a[i], a[min]);
+        }
+    }
+}
+void simpleSort(int a[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (a[j] < a[min] swap(a[i], a[min]))
+                ;
+        }
+    }
+}
+void simpleSort(int a[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (a[j] < a[min])
+                swap(a[i], a[min]);
+        }
+    }
+}
+/////////////////////////////////////////////////////////
+
 int main()
 {
     int a[10] = {9, 8, 7, 3, 7, 1};

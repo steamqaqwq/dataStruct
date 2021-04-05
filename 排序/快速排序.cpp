@@ -44,20 +44,9 @@ void QuickSort(int a[], int low, int high)
 }
 
 /////////////////////////////////////////////////
-void QuickSort2(int a[], int low, int high)
+int partition(int a[], int low, int high)
 {
-    int Partition2(int a[], int low, int high);
-    if (low < high)
-    {
-        int pivotpos = Partition2(a, low, high);
-        Partition2(a, low, pivotpos - 1);
-        Partition2(a, pivotpos + 1, high);
-    }
-}
-
-int Partition2(int a[], int low, int high)
-{
-    int pivot = a[low]; //将枢轴设为low
+    int pivot = a[low];
     while (low < high)
     {
         while (low < high && a[high] >= pivot)
@@ -67,16 +56,24 @@ int Partition2(int a[], int low, int high)
             low++;
         a[high] = a[low];
     }
-    // 此时已找出基准空位 放入基准值 low==hgih
     a[low] = pivot;
     return low;
+}
+void QuickSort2(int a[], int low, int high)
+{
+    if (low < high)
+    {
+        int pivotpos = partition(a, low, high);
+        QuickSort2(a, low, pivotpos - 1);
+        QuickSort2(a, pivotpos + 1, high);
+    }
 }
 /////////////////////////////////////////////////
 
 int main()
 {
     int a[10] = {9, 8, 7, 3, 5, 1};
-    QuickSort(a, 0, 5);
+    QuickSort2(a, 0, 5);
     for (int i = 0; i < 6; i++)
     {
         printf("%d ", a[i]);
