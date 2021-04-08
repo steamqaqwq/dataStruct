@@ -32,33 +32,16 @@ void BubbleSort(int a[], int n)
     for (int i = 0; i < n - 1; i++)
     {
         bool flag = false;
-        // 从后往前 冒泡 小的在前
         for (int j = n - 1; j > i; j--)
         {
             if (a[j - 1] > a[j])
             {
-                // 前项>后项 则前后交换
                 swap(a[j - 1], a[j]);
                 flag = true;
             }
         }
         if (flag == false)
             return;
-    }
-}
-
-void BubbleSort(int a[],int n){
-    for(int i=0;i<n-1;i++){
-        bool flag = false;
-        for(int j=n-1;j>i;j--){
-            if(a[j-1]<a[j]){
-                flag = true;
-                swap(a[j-1],a[j]);
-            }
-        }
-        if(flag == false){
-            return;
-        }
     }
 }
 /////////////////////////////////////////////////////////

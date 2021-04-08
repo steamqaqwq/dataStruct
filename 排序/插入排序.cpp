@@ -21,40 +21,35 @@ void InsertSort(int a[], int n)
     }
 }
 /////////////////////////////////////////////////////
-void InsertSort2(int a[],int n){
-    int i,j,temp;
-    for(i=1;i<n;i++){
-        if(a[i]<a[i-1]){
+void InsertSort2(int a[], int n)
+{
+    int i, j, temp;
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] < a[i - 1])
+        {
             temp = a[i];
-            for(j=i-1;j>=0 &&a[j]>temp;j--){
-                a[j+1]=a[j];
+            for (j = i - 1; j >= 0 && a[j] > temp; j--)
+            {
+                a[j + 1] = a[j];
             }
-            a[j+1]=temp;
+            a[j + 1] = temp;
         }
     }
 }
-void InsertSort3(int a[],int n){
-    int i,j,temp;
-    for(i=1;i<n;i++){
-        if(a[i]<a[i-1]){
-            temp = a[i];
-            for(j=i-1;j>=0 && a[j]>temp;j--){
-                a[j+1]=a[j];
-            }
-            a[j+1]=temp;
-        }
-    }
-}
-void InsertSort4(int a[],int n){
-    int i,j,temp;
-    for(i=1;i<n;i++){
-        if(a[i]<a[i-1]){
-            temp = a[i];
-            for(j=i-1;j>=0 && a[j]>temp;j--){
-                a[j+1]=a[j];//大于temp的值向后挪动
-            }
-            a[j+1]=temp; //j<0 第一位
-        }
+void InsertSort(int a[], int n)
+{
+    int i, j, temp;
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] < a[i - 1] {
+                temp = a[i];
+                for (j = i - 1; j >= 0 && a[j] > temp; j--)
+                {
+                    a[j + 1] = a[j];
+                }
+                a[j + 1] = temp;
+            })
     }
 }
 /////////////////////////////////////////////////////

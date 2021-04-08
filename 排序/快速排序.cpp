@@ -46,26 +46,26 @@ void QuickSort(int a[], int low, int high)
 /////////////////////////////////////////////////
 int partition(int a[], int low, int high)
 {
-    int pivot = a[low];
+    int pivos = a[low];
     while (low < high)
     {
-        while (low < high && a[high] >= pivot)
+        while (low < high && a[high] >= pivos) //找到直到比枢轴元素小的数
             high--;
         a[low] = a[high];
-        while (low < high && a[low] <= pivot)
+        while (low < high && a[low] <= pivos) //找到比枢轴元素大的数
             low++;
         a[high] = a[low];
     }
-    a[low] = pivot;
+    a[low] = pivos;
     return low;
 }
-void QuickSort2(int a[], int low, int high)
+void qSort(int a[], int low, int high)
 {
     if (low < high)
     {
         int pivotpos = partition(a, low, high);
-        QuickSort2(a, low, pivotpos - 1);
-        QuickSort2(a, pivotpos + 1, high);
+        qSort(a, low, pivotpos - 1);
+        qSort(a, pivotpos + 1, high);
     }
 }
 /////////////////////////////////////////////////
@@ -73,7 +73,7 @@ void QuickSort2(int a[], int low, int high)
 int main()
 {
     int a[10] = {9, 8, 7, 3, 5, 1};
-    QuickSort2(a, 0, 5);
+    qSort(a, 0, 5);
     for (int i = 0; i < 6; i++)
     {
         printf("%d ", a[i]);
